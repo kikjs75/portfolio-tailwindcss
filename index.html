@@ -140,8 +140,181 @@
       </section>
 
       <!-- Projects Section -->
-      <section class="bg-cyan-200 h-60">
+      <!-- 1) 구글링 'unsplash' 검색 및 접속 2) 'project' 단어로 검색 3) 검색 필터는 '무료' 선택 4) 이미지 선택 후 '이미지 주소 복사' 클릭 
+       5) '이미지 주소'을 브라우저에 복사하면 이미지 나온다. 6) 이미지 주소에서 너비 값(w) 을 600 변경 후 나머지는 제거. 엔터 치면 이미지 크기에 맞춰 나온다.
+      ex) https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=600 -->
+      <section id="projects" class="mb-16">
         <h2 class="text-3xl font-bold mb-6">프로젝트</h2>
+        <div class="grid grid-cols-2 gap-6">
+          <article
+            class="overflow-hidden bg-gray-100 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+          >
+            <img
+              class="w-full h-48 object-cover"
+              src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=600"
+              alt="전자상거래 플랫폼 이미지"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-4 text-gray-800">
+                전자상거래 플랫폼
+              </h3>
+              <div class="space-x-2 mb-4">
+                <span
+                  class="bg-gray-200 text-xs px-2 py-0.5 rounded-md text-gray-700 border-gray-300"
+                  >React</span
+                >
+                <span
+                  class="bg-gray-200 text-xs px-2 py-0.5 rounded-md text-gray-700 border-gray-300"
+                  >Node.js</span
+                >
+                <span
+                  class="bg-gray-200 text-xs px-2 py-0.5 rounded-md text-gray-700 border-gray-300"
+                  >Express</span
+                >
+                <span
+                  class="bg-gray-200 text-xs px-2 py-0.5 rounded-md text-gray-700 border-gray-300"
+                  >MongoDB</span
+                >
+              </div>
+              <div class="space-x-2 flex justify-start">
+                <a
+                  href="#"
+                  class="text-sm bg-gray-800 text-white px-3 py-1 rounded-md"
+                  >GitHub</a
+                >
+                <a
+                  href="#"
+                  class="text-sm bg-blue-600 text-white px-3 py-1 rounded-md"
+                  >라이브 데모</a
+                >
+              </div>
+            </div>
+          </article>
+          <article
+            class="overflow-hidden bg-gray-100 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+          >
+            <img
+              class="w-full h-48 object-cover"
+              src="https://images.unsplash.com/photo-1620325867502-221cfb5faa5f?q=80&w=600"
+              alt="작업 관리 앱 이미지"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-4 text-gray-800">
+                작업 관리 앱
+              </h3>
+              <div class="space-x-2 mb-4">
+                <span
+                  class="bg-gray-200 text-xs px-2 py-0.5 rounded-md text-gray-700 border-gray-300"
+                  >React</span
+                >
+                <span
+                  class="bg-gray-200 text-xs px-2 py-0.5 rounded-md text-gray-700 border-gray-300"
+                  >Redux</span
+                >
+                <span
+                  class="bg-gray-200 text-xs px-2 py-0.5 rounded-md text-gray-700 border-gray-300"
+                  >Drag and Drop</span
+                >
+                <span
+                  class="bg-gray-200 text-xs px-2 py-0.5 rounded-md text-gray-700 border-gray-300"
+                  >Firebase</span
+                >
+              </div>
+              <div class="space-x-2 flex justify-end">
+                <a
+                  href="#"
+                  class="text-sm bg-gray-800 text-white px-3 py-1 rounded-md"
+                  >GitHub</a
+                >
+                <a
+                  href="#"
+                  class="text-sm bg-blue-600 text-white px-3 py-1 rounded-md"
+                  >라이브 데모</a
+                >
+              </div>
+            </div>
+          </article>
+          <article
+            class="overflow-hidden bg-gray-100 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+          >
+            <img
+              class="w-full h-48 object-cover"
+              src="https://images.unsplash.com/photo-1542621334-a254cf47733d?q=80&w=600"
+              alt="포트폴리오 웹사이트 이미지"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-4 text-gray-800">
+                포트폴리오 웹사이트
+              </h3>
+              <div class="space-x-2 mb-4">
+                <span
+                  class="bg-gray-200 text-xs px-2 py-0.5 rounded-md text-gray-700 border-gray-300"
+                  >HTML</span
+                >
+                <span
+                  class="bg-gray-200 text-xs px-2 py-0.5 rounded-md text-gray-700 border-gray-300"
+                  >CSS</span
+                >
+                <span
+                  class="bg-gray-200 text-xs px-2 py-0.5 rounded-md text-gray-700 border-gray-300"
+                  >JavaScript</span
+                >
+              </div>
+              <div class="space-x-2 flex justify-start">
+                <a
+                  href="#"
+                  class="text-sm bg-gray-800 text-white px-3 py-1 rounded-md"
+                  >GitHub</a
+                >
+                <a
+                  href="#"
+                  class="text-sm bg-blue-600 text-white px-3 py-1 rounded-md"
+                  >라이브 데모</a
+                >
+              </div>
+            </div>
+          </article>
+          <article
+            class="overflow-hidden bg-gray-100 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+          >
+            <img
+              class="w-full h-48 object-cover"
+              src="https://images.unsplash.com/photo-1518976024611-28bf4b48222e?q=80&w=600"
+              alt="블로그 플랫폼 이미지""
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-4 text-gray-800">
+                블로그 플랫폼
+              </h3>
+              <div class="space-x-2 mb-4">
+                <span
+                  class="bg-gray-200 text-xs px-2 py-0.5 rounded-md text-gray-700 border-gray-300"
+                  >Next.js</span
+                >
+                <span
+                  class="bg-gray-200 text-xs px-2 py-0.5 rounded-md text-gray-700 border-gray-300"
+                  >Tailwind CSS</span
+                >
+                <span
+                  class="bg-gray-200 text-xs px-2 py-0.5 rounded-md text-gray-700 border-gray-300"
+                  >Markdown</span
+                >
+              </div>
+              <div class="space-x-2 flex justify-end">
+                <a
+                  href="#"
+                  class="text-sm bg-gray-800 text-white px-3 py-1 rounded-md"
+                  >GitHub</a
+                >
+                <a
+                  href="#"
+                  class="text-sm bg-blue-600 text-white px-3 py-1 rounded-md"
+                  >라이브 데모</a
+                >
+              </div>
+            </div>
+          </article>
+        </div>
       </section>
 
       <!-- Contact Section -->
