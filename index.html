@@ -27,7 +27,7 @@
           <h1 class="text-2xl font-bold">김개발</h1>
           <p class="text-sm text-gray-500 dark:text-gray-300">풀스택 개발자</p>
         </div>
-        <div class="flex items-center gap-x-6">
+        <div class="hidden md:flex items-center gap-x-6">
           <a href="#home" class="hover:text-blue-500 transition-colors">홈</a>
 
           <a href="#about" class="hover:text-blue-500 transition-colors"
@@ -44,13 +44,46 @@
           >
           <button
             id="darkModeToggle"
-            class="p-2 w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-400 focus:outline-none focus:ring focus:ring-blue-500"
+            class="dark-toggle p-2 w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-400 focus:outline-none focus:ring focus:ring-blue-500"
           >
             <i class="fas fa-moon text-gray-700 dark:text-yellow-400"></i>
           </button>
         </div>
+        <button
+          id="menuToggle"
+          class="p-2 text-gray-700 dark:text-white md:hidden"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
       </nav>
     </header>
+    <aside
+      id="mobileMenu"
+      class="block md:hidden fixed right-0 inset-y-0 bg-white w-64 dark:bg-gray-800 shadow-lg translate-x-full transition-transform duration-300 z-20"
+    >
+      <button id="closeMenu" class="p-2 m-4 text-gray-700 dark:text-white">
+        <i class="fas fa-times text-2xl"></i>
+      </button>
+      <nav class="flex flex-col space-y-4 mt-10 px-6">
+        <a href="#home" class="hover:text-blue-500 transition-colors">홈</a>
+
+        <a href="#about" class="hover:text-blue-500 transition-colors">소개</a>
+        <a href="#skills" class="hover:text-blue-500 transition-colors">기술</a>
+        <a href="#projects" class="hover:text-blue-500 transition-colors"
+          >프로젝트</a
+        >
+        <a href="#contact" class="hover:text-blue-500 transition-colors"
+          >연락처</a
+        >
+        <button
+          id="darkModeToggleMobile"
+          class="dark-toggle p-2 w-full rounded-full bg-gray-200 dark:bg-gray-400 focus:outline-none focus:ring focus:ring-blue-500"
+        >
+          <i class="fas fa-moon text-gray-700 dark:text-yellow-400"></i>
+        </button>
+      </nav>
+    </aside>
+
     <main class="container max-w-4xl mx-auto px-6 py-12">
       <!-- Home Section -->
       <!-- 1) 구글링 'dicebear' 검색 후 dicebear 홈피 접속 2) 'Try Playgroud' 선택 3) 캐릭터 선택하고 이미지 태그 링크 복사 -->
@@ -424,25 +457,60 @@
         }
       }
 
-      function toggleDarkMode() {
-        const darkModeToggleIcon = document
-          .getElementById('darkModeToggle')
-          .querySelector('i');
+      // function toggleDarkMode() {
+      //   const darkModeToggleIcon = document
+      //     .getElementById('darkModeToggle')
+      //     .querySelector('i');
 
-        if (document.documentElement.classList.contains('dark')) {
-          document.documentElement.classList.remove('dark');
-          localStorage.setItem('theme', 'light');
-          darkModeToggleIcon.className = 'fas fa-moon text-gray-700';
-        } else {
-          document.documentElement.classList.add('dark');
-          localStorage.theme = 'dark';
-          darkModeToggleIcon.className = 'fas fa-sun dark:text-yellow-400"';
-        }
+      //   if (document.documentElement.classList.contains('dark')) {
+      //     document.documentElement.classList.remove('dark');
+      //     localStorage.setItem('theme', 'light');
+      //     darkModeToggleIcon.className = 'fas fa-moon text-gray-700';
+      //   } else {
+      //     document.documentElement.classList.add('dark');
+      //     localStorage.theme = 'dark';
+      //     darkModeToggleIcon.className = 'fas fa-sun dark:text-yellow-400"';
+      //   }
+      // }
+
+      function toggleDarkModeCommon() {
+        const isDark = document.documentElement.classList.toggle('dark');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
       }
 
+      function handleMenuToggle() {
+        // class="block md:hidden fixed right-0 inset-y-0 bg-white w-64 dark:bg-gray-800 shadow-lg translate-x-full"
+        // document.getElementById('mobileMenu').className =
+        //   'block md:hidden fixed right-0 inset-y-0 bg-white w-64 dark:bg-gray-800 shadow-lg transition-transform duration-300';
+        document
+          .getElementById('mobileMenu')
+          .classList.toggle('translate-x-full');
+      }
+
+      function handleCloseMenu() {
+        // class="block md:hidden fixed right-0 inset-y-0 bg-white w-64 dark:bg-gray-800 shadow-lg translate-x-full"
+        // document.getElementById('mobileMenu').className =
+        //   'block md:hidden fixed right-0 inset-y-0 bg-white w-64 dark:bg-gray-800 shadow-lg translate-x-full transition-transform duration-300';
+        document.getElementById('mobileMenu').classList.add('translate-x-full');
+      }
+
+      // document
+      //   .getElementById('darkModeToggle')
+      //   .addEventListener('click', toggleDarkMode);
+
+      // menuToggle / closeMenu / mobileMenu
       document
-        .getElementById('darkModeToggle')
-        .addEventListener('click', toggleDarkMode);
+        .getElementById('menuToggle')
+        .addEventListener('click', handleMenuToggle);
+
+      document
+        .getElementById('closeMenu')
+        .addEventListener('click', handleCloseMenu);
+
+      document.querySelectorAll('.dark-toggle').forEach((button) => {
+        button.addEventListener('click', toggleDarkModeCommon);
+      });
+
       initialTheme();
     </script>
   </body>
